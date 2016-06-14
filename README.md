@@ -19,14 +19,11 @@ ZjDroid是基于Xposed Framewrok的动态逆向分析模块，逆向分析者可
 
 二、ZjDroid相关命令
 
-1、获取APK当前加载DEX文件信息：
-adb shell am broadcast -a com.zjdroid.invoke --ei target pid --es cmd '{"action":"dump_dexinfo"}'
+1、获取APK当前加载DEX文件信息，真实示例，其实是不要加单引号的 <br/>
+adb shell am broadcast -a com.zjdroid.invoke --ei target 5496 --es cmd {"action":"dump_dexinfo"}<br/>
 
-真实示例：其实是不要加单引号的
-adb shell am broadcast -a com.zjdroid.invoke --ei target 5496 --es cmd {"action":"dump_dexinfo"}
-
-2、获取指定DEX文件包含可加载类名：
-adb shell am broadcast -a com.zjdroid.invoke --ei target pid --es cmd '{"action":"dump_class","dexpath":"*****"}'
+2、获取指定DEX文件包含可加载类名：<br/>
+adb shell am broadcast -a com.zjdroid.invoke --ei target pid --es cmd {"action":"dump_class","dexpath":"*****"}<br/>
 
 4、根据Dalvik相关内存指针动态反编译指定DEX，并以文件形式保存。
 adb shell am broadcast -a com.zjdroid.invoke --ei target pid --es cmd '{"action":"backsmali","dexpath":"*****"}'
