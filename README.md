@@ -7,15 +7,18 @@ Android app dynamic reverse tool based on Xposed framework.
 一、ZjDroid工具介绍
 
 ZjDroid是基于Xposed Framewrok的动态逆向分析模块，逆向分析者可以通过ZjDroid完成以下工作：
-1、DEX文件的内存dump
-2、基于Dalvik关键指针的内存BackSmali，有效破解主流加固方案
-3、敏感API的动态监控
-4、指定内存区域数据dump
-5、获取应用加载DEX信息。
-6、获取指定DEX文件加载类信息。
-7、dump Dalvik java堆信息。
-8、在目标进程动态运行lua脚本。
+1、DEX文件的内存dump。<br/>
+2、基于Dalvik关键指针的内存BackSmali，有效破解主流加固方案。<br/>
+3、敏感API的动态监控。<br/>
+4、指定内存区域数据dump。<br/>
+5、获取应用加载DEX信息。<br/>
+6、获取指定DEX文件加载类信息。<br/>
+7、dump Dalvik java堆信息。<br/>
+8、在目标进程动态运行lua脚本。<br/>
 
+注意事项：
+1、`'{"action":"dump_dexinfo"}' 这种的接收到以后解析不正常，故去掉了大括号外面的''。`<br/>
+2、`{"action":"dump_class","dexpath":"*****"} 命令的大括号里面有,号的广播发送不成功，故用&替换。如：{"action":"dump_class"&"dexpath":"*****"}。`<br/> 
 
 二、ZjDroid相关命令
 
